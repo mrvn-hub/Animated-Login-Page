@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/main.css";
 import Login from "./Login";
-//import bg from "../images/bg2.png";
 
 
 function App() {
@@ -18,12 +17,6 @@ function App() {
 }
 
 
-const BG =()=> 
-(
-  <div className="bg">
-    {/*<img src={bg} alt=""/>*/}
-  </div>
-);
 
 const WelcomeWidget =()=>
 {
