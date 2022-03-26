@@ -6,7 +6,6 @@ import Login from "./Login";
 function App() {
   return (
     <div className="App">
-      <BG/>
       <div className="main slide">
         <WelcomeWidget/>
         <Login/>
