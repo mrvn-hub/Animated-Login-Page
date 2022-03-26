@@ -1,0 +1,281 @@
+/*
+Author: Marvin Ndlovu
+*/
+@keyframes btn-anim {
+  0% {
+    background-image: linear-gradient(to right, #cf5d5d, #38d39f, #cf5d5d);
+  }
+  25% {
+    transform: translateX(-20rem) rotate(-45deg);
+    transition: all 0.5s;
+  }
+  50% {
+    opacity: 0.8;
+    background-image: linear-gradient(to right, grey, #38d39f, grey);
+    transform: translateY(5rem) translateX(-20rem) rotate(-90deg);
+    transition: all 0.5s;
+  }
+  75% {
+    transform: translateX(-20rem) rotate(45deg);
+    transition: all 0.5s;
+  }
+  90% {
+    background-image: radial-gradient(grey, #38d39f, grey);
+    transform: rotate(90deg) translateY(2rem) translateX(5rem);
+    transition: all 0.5s;
+  }
+}
+@keyframes moving {
+  0% {
+    transform: translateX(0vh);
+  }
+  100% {
+    transform: translateX(-2000000vh);
+  }
+}
+@keyframes user-anim {
+  50% {
+    transform: translateX(5rem) translateY(-5rem) rotate(30deg);
+    transition: all 1s;
+  }
+}
+@keyframes pass-anim {
+  50% {
+    transform: translateX(5rem) translateY(5rem) rotate(-30deg);
+    transition: all 1s;
+  }
+}
+@keyframes create-anim {
+  0% {
+    color: grey;
+  }
+  15% {
+    transform: translateZ(5rem) translateY(-7rem);
+    color: #332626;
+    z-index: -5;
+  }
+  75% {
+    transform: translateZ(-5rem) translateY(0rem);
+    color: #332626;
+    z-index: -10;
+  }
+  100% {
+    color: grey;
+    z-index: -22;
+  }
+}
+@keyframes bounce-anim {
+  100% {
+    color: rgba(255, 255, 255, 0.2);
+    top: -20px;
+    text-shadow: -1px 1px 0 #cf5d5d, -2px 2px 0 #cf5d5d, -3px 3px 0 #cf5d5d, -4px 4px 0 #cf5d5d, -5px 5px 0 #cf5d5d, -6px 6px 0 #cf5d5d, -7px 7px 0 #cf5d5d, -8px 8px 0 #cf5d5d, -9px 9px 0 #cf5d5d, -10px 10px 0 #cf5d5d, -40px 50px 25px rgba(207, 93, 93, 0.6);
+  }
+}
+@keyframes slide-in {
+  100% {
+    top: 20%;
+    transition: all 5s;
+  }
+}
+@font-face {
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bangers/v19/FeVQS0BTqb0h60ACL5k.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bungee';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bungee/v9/N0bU2SZBIuF2PU_ECg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Luckiest Guy';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/luckiestguy/v17/_gP_1RrxsjcxVyin9l9n_j2RSg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Risque';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/risque/v18/VdGfAZUfHosahXxoCQ.ttf) format('truetype');
+}
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bungee', cursive;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -100;
+  background-image: url("../images/bg2.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+  width: 3000vw;
+  min-height: 100vh;
+  top: -8%;
+  animation: moving 290000s linear infinite;
+  background-repeat: repeat-x;
+  opacity: 0.8;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.welcome {
+  text-align: center;
+  font-size: clamp(5rem, 15vw, 12rem);
+  color: #cf5d5d;
+  z-index: 2;
+  font-family: 'Bungee', cursive;
+}
+.welcome span:hover {
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  -webkit-animation: bounce 0.3s ease infinite alternate;
+  animation: bounce-anim 0.3s ease infinite alternate;
+  text-shadow: 1px 1px 0 #cf5d5d, -10px 10px 10px rgba(207, 93, 93, 0.8);
+}
+.my-form {
+  display: block;
+  width: 100%;
+  max-width: 60rem;
+  margin-top: 2.5rem;
+  padding: 0.5rem;
+}
+.my-form .input {
+  color: #332626;
+  margin: 1rem;
+  margin-top: 2rem;
+  font-size: clamp(1rem, 4vw, 2rem);
+  width: 100%;
+}
+.my-form .input #username:hover {
+  border: 2px solid #332626;
+  animation: user-anim 10s linear;
+  transition: all 2s;
+  animation-delay: 2s;
+}
+.my-form .input #password:hover {
+  border: 2px solid #332626;
+  animation: pass-anim 1s ease-in-out;
+  transition: all 0.2s;
+  animation-delay: 2s;
+}
+.my-form .input .user-pass:hover {
+  transform: translateX(-50rem);
+  transition: all 2s;
+  color: #38d39f;
+  margin-left: -10%;
+  animation: bounce-anim 0.4s ease alternate;
+}
+.my-form input[type="text"],
+.my-form input[type="password"] {
+  margin: 0.5rem;
+  border: 2px solid #cf5d5d;
+  border-radius: 0.5rem;
+  color: gray;
+  width: 98%;
+  font-size: 1.7rem;
+  padding: 0.3rem;
+}
+.my-form a {
+  display: inline-flex;
+  text-decoration: none;
+  color: red;
+}
+.my-form .forgot {
+  display: flex;
+  align-self: flex-end;
+  text-align: center;
+  float: right;
+}
+.my-form .forgot:hover {
+  transform: translateX(5rem);
+  transition: all 2s;
+  color: grey;
+}
+.my-form button {
+  display: block;
+  float: center;
+  width: 100%;
+  height: 4rem;
+  border-radius: 2rem;
+  background-image: linear-gradient(to right, #cf5d5d, #38d39f, #cf5d5d);
+  font-size: 2rem;
+  color: #cf5d5d;
+  transition: all 1s;
+  z-index: 0;
+  margin-top: 3.5rem;
+}
+.my-form button:hover {
+  color: #332626;
+  animation: btn-anim 5s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 2s;
+  animation-delay: 2s;
+}
+.my-form .create {
+  display: inline-block;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  margin: 1rem;
+  z-index: -2;
+  width: 95%;
+}
+.my-form .create:hover {
+  animation: create-anim 2s linear;
+  transition: all 2s;
+  animation-delay: 2s;
+}
+@media (min-width: 580px), (orientation: landscape) {
+  .input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    transition: all 2s;
+  }
+  .my-form button {
+    width: 10rem;
+    margin-left: 1rem;
+  }
+  .my-form .create {
+    margin: 1rem;
+    z-index: 2;
+    text-align: left;
+    transition: all 1s;
+  }
+  .my-form a {
+    font-size: 1.2rem;
+    transition: all 1s;
+  }
+}
+.slidse {
+  position: absolute;
+  margin: auto;
+  top: -100vh;
+  -webkit-animation: slide-in 3s forwards;
+  animation: slide-in 3s forwards;
+}
+/**/

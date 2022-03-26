@@ -1,0 +1,250 @@
+/*
+Author: Marvin Ndlovu
+*/
+
+@import "./vars.less";
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Bangers&family=Bungee&family=Risque&display=swap');
+@font: 'Bungee', cursive;
+@color: #cf5d5d;
+@dark: #332626;
+
+
+html
+{
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+}
+
+body
+{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: @font;
+    
+}
+
+.bg
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -100;
+    background-image: url("../images/bg2.png");
+    background-repeat: repeat-y;
+    background-size: contain;
+    width: 3000vw;
+    min-height: 100vh;
+    top: -8%;
+    animation: moving 290000s linear infinite;
+    background-repeat: repeat-x;
+    opacity: 0.8;
+}
+
+.main
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.welcome
+{
+    text-align: center;
+    font-size: clamp(5rem, 15vw, 12rem);
+  color: @color;
+  z-index: 2;
+  font-family: @font;
+
+  span:hover
+  {
+    position: relative;
+    top: 20px;
+    display: inline-block;
+    -webkit-animation: bounce .3s ease infinite alternate;
+    animation: bounce-anim .3s ease infinite alternate;
+    text-shadow: 1px 1px 0 @color,
+                -10px 10px 10px rgba(@color, .8);
+  }
+}
+
+.my-form
+{
+    display: block;
+
+    width: 100%;
+    max-width: 60rem;
+    margin-top: 2.5rem;
+    padding: 0.5rem;
+
+
+    .input
+    {
+        color: @dark;
+        margin: 1rem;
+        margin-top: 2rem;
+        font-size: clamp(1rem, 4vw, 2rem);
+        width: 100%;
+
+        #username:hover
+        {
+            border: 2px solid @dark;
+            animation: user-anim 10s linear;
+            transition: all 2s;
+            animation-delay: 2s;
+        }
+        #password:hover
+        {
+            border: 2px solid @dark;
+            animation: pass-anim 1s ease-in-out;
+            transition: all 0.2s;
+            animation-delay: 2s;
+        }
+
+        .user-pass:hover
+        {
+            transform: translateX(-50rem);
+            transition: all 2s;
+            color: #38d39f;
+            margin-left: -10%;
+            animation: bounce-anim 0.4s ease alternate;
+        }
+    }
+
+    input[type="text"], input[type="password"]
+    {
+        margin: 0.5rem;
+        border: 2px solid @color;
+        border-radius: 0.5rem;
+        color: gray;
+        width: 98%;
+        font-size: 1.7rem;
+        padding: 0.3rem;    
+    }
+
+
+    
+    a{
+        display: inline-flex;
+	    text-decoration: none;
+        color: red;
+    }
+    
+    
+    .forgot
+    {
+        display: flex;
+        align-self: flex-end;
+        text-align: center;
+        float: right;
+        
+        &:hover
+        {
+            transform: translateX(5rem);
+            transition: all 2s;
+            color: grey;
+        }
+    }
+
+
+    button
+    {
+        display: block;
+        float: center;
+        width: 100%;
+        height: 4rem;
+        border-radius: 2rem;
+        background-image: linear-gradient(to right, #cf5d5d, #38d39f, #cf5d5d);
+        font-size: 2rem;
+        color: #cf5d5d;
+        transition: all 1s;
+        z-index: 0;
+        margin-top: 3.5rem;
+
+
+        &:hover
+        {
+            color: @dark;
+            animation: btn-anim 5s cubic-bezier(0.86, 0, 0.07, 1)  ;
+            transition: all 2s;
+            animation-delay: 2s;
+        }
+    }
+
+    .create
+    {
+        display: inline-block;
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        margin: 1rem;
+        z-index: -2;
+        width: 95%;
+
+        &:hover
+        {
+            animation: create-anim 2s linear;
+            transition: all 2s;
+            animation-delay: 2s;
+        }        
+    }
+
+}
+
+
+@media (min-width: 580px),   (orientation: landscape)
+{
+    .input
+    {
+        //background-color: blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5rem;   
+        transition: all 2s;
+    }
+
+    .my-form
+    {
+        button
+        {
+            width: 10rem;
+            margin-left: 1rem;
+        }
+
+        .create
+        {   
+            margin: 1rem;
+            z-index: 2;
+            text-align: left;
+            transition: all 1s;
+        }
+
+        a
+        {
+            font-size: 1.2rem;
+            transition: all 1s;
+        }
+    }
+
+
+}
+
+
+
+.slidse
+{
+    position: absolute;
+    margin: auto;
+    top: -100vh;
+    -webkit-animation: slide-in 3s forwards;
+    animation: slide-in 3s forwards;
+}
+
+/**/
