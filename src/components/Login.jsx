@@ -28,11 +28,11 @@ class Login extends React.Component
                     <input type="password" id="password" required value={this.state.password} onChange={(e)=>{this.setState({password:e.target.value})}}/>
                 </span>
                 <span className="forgot">
-                    <a href="">Forgot Password?</a>
+                    <a href="/forgot">Forgot Password?</a>
                 </span>
                 <button>Login</button>
                 <span className="create">
-                    <a href="">Don't have an account?</a>
+                    <a href="/create">Don't have an account?</a>
                 </span>
             </form>
         );
